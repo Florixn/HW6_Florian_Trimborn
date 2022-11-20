@@ -34,9 +34,7 @@ public class Game_Chair {
             } else if (response.equals("ja")) {
                 System.out.println("\nNeue Karte wird vom Stapel gezogen...");
             }
-
         }
-
     }
     public Player FindWinner(Player Computer, Player Player_2) {
         if (Computer.getCurrentCard() > Player_2.getCurrentCard()) {

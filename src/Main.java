@@ -16,6 +16,5 @@ public class Main {
             System.out.println("Verloren!");
             System.out.println("Der Computer hat die Nummer " + g.Computer.getCurrentCard());
         }
-
     }
 }
