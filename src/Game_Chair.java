@@ -7,7 +7,6 @@ public class Game_Chair {
 
     public void Start() {
         Computer.Play();
-        System.out.println("Welcome to BetMore");
         Scanner in = new Scanner(System.in);
         String response;
         int counter = 5;
@@ -15,33 +14,31 @@ public class Game_Chair {
             Player_2.Play();
             counter--;
             System.out.println("------------------------------------------");
-            System.out.println("Your current Card is " + Player_2.getCurrentCard());
+            System.out.println("Deine aktuelle Karte ist " + Player_2.getCurrentCard());
             if (counter == 0) {
                 System.out.println("------------------------------------------");
                 in.close();
                 break;
             }
-            System.out.println("Would you like to draw another card? (" + counter + " remaining) (yes/no)");
+            System.out.println("Noch eine Karte ziehen? (" + counter + " Versuche übrig) (ja/nein)");
             System.out.println("------------------------------------------");
             response = in.next();
-            while (!response.equals("yes") && !response.equals("no")) {
-                System.out.println("\nInvalid response. Try again.");
+            while (!response.equals("ja") && !response.equals("nein")) {
+                System.out.println("\nDiese Eingabe ist ungültig. Bitte wähle ja oder nein aus...");
                 response = in.next();
             }
-            if (response.equals("no")) {
+            if (response.equals("nein")) {
                 System.out.println("------------------------------------------");
                 in.close();
                 user_selected = false;
-            } else if (response.equals("yes")) {
-                System.out.println("\nPicking new card now...");
+            } else if (response.equals("ja")) {
+                System.out.println("\nNeue Karte wird vom Stapel gezogen...");
             }
 
         }
 
     }
     public Player FindWinner(Player Computer, Player Player_2) {
-        System.out.println("Calculating winner now...");
-        System.out.println("------------------------------------------");
         if (Computer.getCurrentCard() > Player_2.getCurrentCard()) {
             return Computer;
         } else {
